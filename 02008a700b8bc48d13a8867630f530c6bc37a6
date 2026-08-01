@@ -1,4 +1,0 @@
-0000000000000000000000000000000000000000 dfe3f8106cde1f123dc157a8769ba214894042bc Renato Beretta <renato@puertopacificosur.pe> 1785553864 +0000	commit (initial): Sitio Puerto Pacífico Sur: 8 páginas, paleta segmentada, fotografía real embebida
-dfe3f8106cde1f123dc157a8769ba214894042bc 0000000000000000000000000000000000000000 root <root@vm.(none)> 1785553865 +0000	Branch: renamed refs/heads/master to refs/heads/main
-0000000000000000000000000000000000000000 dfe3f8106cde1f123dc157a8769ba214894042bc root <root@vm.(none)> 1785553865 +0000	Branch: renamed refs/heads/master to refs/heads/main
-dfe3f8106cde1f123dc157a8769ba214894042bc 46bb23184f53624bf2e73606de88cba5c4656fc5 Renato Beretta <renato@puertopacificosur.pe> 1785558303 +0000	commit: Fix: enlaces internos con extensión .html para GitHub Pages
