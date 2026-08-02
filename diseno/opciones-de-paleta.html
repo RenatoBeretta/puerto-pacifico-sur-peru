@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light only">
+<title>Opciones de paleta — Puerto Pacífico Sur</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800;900&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:light}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Source Serif 4',Georgia,serif;background:#f3f1ec;color:#101c2e}
+.disp{font-family:'Archivo',sans-serif}
+.dato{font-family:'IBM Plex Mono',monospace}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.intro{padding:50px 0 30px;text-align:center}
+.intro h1{font-family:'Archivo',sans-serif;font-weight:900;font-size:clamp(24px,3.4vw,34px);letter-spacing:-.02em}
+.intro p{font-size:15.5px;color:rgba(16,28,46,.68);max-width:60ch;margin:12px auto 0}
+
+.opcion{padding:44px 0 56px;border-top:6px solid #000}
+.opcion .head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:14px;margin-bottom:22px}
+.opcion .num{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+.opcion h2{font-family:'Archivo',sans-serif;font-weight:800;font-size:26px;letter-spacing:-.02em;margin-top:6px}
+.opcion .desc{font-size:15px;color:rgba(16,28,46,.68);max-width:56ch;margin-top:6px}
+
+/* swatches */
+.swatches{display:flex;gap:2px;margin-bottom:26px;flex-wrap:wrap}
+.sw{width:100px;flex:1;min-width:90px}
+.sw .chip{height:56px}
+.sw .lab{font-family:'IBM Plex Mono',monospace;font-size:9.5px;padding:6px 4px;background:#fff;border:1px solid rgba(0,0,0,.08);border-top:0}
+.sw .lab b{display:block;font-family:'Archivo',sans-serif;font-size:10.5px;font-weight:700}
+
+/* mockup */
+.mock{border:1px solid rgba(0,0,0,.1)}
+.m-nav{display:flex;align-items:center;justify-content:space-between;padding:12px 22px}
+.m-brand{display:flex;align-items:center;gap:10px}
+.m-logo{width:32px;height:32px;border:1px dashed rgba(255,255,255,.4);flex-shrink:0}
+.m-brand b{font-family:'Archivo',sans-serif;font-size:13px;color:#fff}
+.m-menu{display:flex;gap:16px;font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.08em;text-transform:uppercase}
+
+.m-hero{padding:46px 22px 34px}
+.m-hero .badge{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;padding:5px 10px;margin-bottom:14px}
+.m-hero h3{font-family:'Archivo',sans-serif;font-weight:900;font-size:clamp(22px,3.4vw,32px);color:#fff;line-height:1.02;letter-spacing:-.02em}
+.m-hero p{font-size:13.5px;color:rgba(255,255,255,.72);max-width:44ch;margin-top:12px}
+.m-btns{display:flex;gap:10px;margin-top:18px}
+.m-btn{font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;padding:11px 16px}
+
+.m-bar{display:grid;grid-template-columns:repeat(4,1fr)}
+.m-bar div{padding:16px 18px;border-right:1px solid rgba(255,255,255,.12)}
+.m-bar div:last-child{border-right:0}
+.m-bar .v{font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:18px;color:#fff}
+.m-bar .k{font-family:'Archivo',sans-serif;font-size:10px;color:rgba(255,255,255,.75);margin-top:4px}
+
+.m-body{padding:26px 22px;background:#fff}
+.m-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;display:flex;gap:8px;align-items:center;margin-bottom:12px}
+.m-eyebrow::after{content:'';flex:1;height:1px}
+.m-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:14px}
+.m-card{padding:16px 15px}
+.m-card .tag{font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:.1em;text-transform:uppercase}
+.m-card h4{font-family:'Archivo',sans-serif;font-size:14px;margin:8px 0 5px}
+.m-card p{font-size:11.5px;color:rgba(16,28,46,.6);line-height:1.4}
+
+.m-table{width:100%;border-collapse:collapse;font-size:12px;margin-top:14px}
+.m-table th{font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:.08em;text-transform:uppercase;text-align:left;padding:7px 8px;border-bottom:1.5px solid}
+.m-table td{padding:7px 8px;border-bottom:1px solid rgba(0,0,0,.08);font-family:'IBM Plex Mono',monospace;font-size:11px}
+
+.verdict{background:#fff;border:1px solid rgba(0,0,0,.1);padding:16px 20px;margin-top:18px;font-size:13.5px;color:rgba(16,28,46,.75)}
+.verdict b{font-family:'Archivo',sans-serif}
+
+@media(max-width:700px){.m-menu{display:none}.m-cards{grid-template-columns:1fr}.m-bar{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+
+<div class="intro">
+  <h1>Tres direcciones de paleta</h1>
+  <p>Las tres parten del rojo y azul de tu logo — no lo toco. Lo que cambia es el color secundario y la temperatura general. Aplicadas sobre los mismos componentes reales del sitio para comparar en igualdad de condiciones.</p>
+</div>
+
+<!-- ============================================ -->
+<!-- OPCIÓN 1 — CARTA NÁUTICA (la actual, refinada) -->
+<!-- ============================================ -->
+<section class="opcion" style="border-color:#0A2240">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <div class="num" style="color:#ED2224">OPCIÓN 1</div>
+        <h2>Carta Náutica <span style="font-weight:400;color:rgba(16,28,46,.5);font-size:16px">— la que ya tienes</span></h2>
+        <p class="desc">Navy profundo + rojo de marca + arena cálida. Es la que está construida hoy. La incluyo como punto de comparación, no como novedad.</p>
+      </div>
+    </div>
+    <div class="swatches">
+      <div class="sw"><div class="chip" style="background:#0A2240"></div><div class="lab"><b>Tinta</b>#0A2240</div></div>
+      <div class="sw"><div class="chip" style="background:#1C3F8C"></div><div class="lab"><b>Azul</b>#1C3F8C</div></div>
+      <div class="sw"><div class="chip" style="background:#ED2224"></div><div class="lab"><b>Rojo</b>#ED2224</div></div>
+      <div class="sw"><div class="chip" style="background:#C4AE87"></div><div class="lab"><b>Arena</b>#C4AE87</div></div>
+      <div class="sw"><div class="chip" style="background:#E7E1D4"></div><div class="lab"><b>Carta</b>#E7E1D4</div></div>
+      <div class="sw"><div class="chip" style="background:#F8F6F1;box-shadow:inset 0 0 0 1px rgba(0,0,0,.1)"></div><div class="lab"><b>Papel</b>#F8F6F1</div></div>
+    </div>
+
+    <div class="mock">
+      <div class="m-nav" style="background:#0A2240">
+        <div class="m-brand"><span class="m-logo"></span><b>Puerto Pacífico Sur</b></div>
+        <div class="m-menu" style="color:rgba(248,246,241,.8)"><span>ASTILLERO</span><span style="color:#ED2224">TERMINAL</span><span>TERRENOS</span></div>
+      </div>
+      <div class="m-hero" style="background:linear-gradient(150deg,#123055,#0A2240)">
+        <span class="badge" style="color:#C4AE87;border:1px solid rgba(196,174,135,.4);background:rgba(196,174,135,.1)">Oportunidad abierta</span>
+        <h3>El puerto que no<br>necesita dragado</h3>
+        <p>851 hectáreas inscritas, calado natural de hasta 27.7 m.</p>
+        <div class="m-btns">
+          <div class="m-btn" style="background:#ED2224;color:#fff">Solicitar dossier</div>
+          <div class="m-btn" style="border:1px solid rgba(255,255,255,.4);color:#fff">Ver líneas</div>
+        </div>
+      </div>
+      <div class="m-bar" style="background:#0A2240">
+        <div><div class="v">27.7<span style="font-size:11px;color:#C4AE87">m</span></div><div class="k">Sonda máxima</div></div>
+        <div><div class="v">851<span style="font-size:11px;color:#C4AE87">ha</span></div><div class="k">Propiedad inscrita</div></div>
+        <div><div class="v">0</div><div class="k">Gravámenes</div></div>
+        <div><div class="v">18<span style="font-size:11px;color:#C4AE87">%</span></div><div class="k">TIR terminal</div></div>
+      </div>
+      <div class="m-body">
+        <div class="m-eyebrow" style="color:#1C3F8C"><span>Líneas de desarrollo</span></div>
+        <table class="m-table">
+          <thead style="color:#1C3F8C"><tr style="border-color:#1C3F8C"><th>Terminal</th><th>Calado</th><th>Clase</th></tr></thead>
+          <tbody>
+            <tr style="background:rgba(237,34,36,.06)"><td style="color:#ED2224;font-weight:600;box-shadow:inset 3px 0 0 #ED2224">Puerto Pacífico Sur</td><td>20.0 m</td><td>Capesize</td></tr>
+            <tr><td>Mejillones</td><td>18.0 m</td><td>Capesize</td></tr>
+          </tbody>
+        </table>
+        <div class="m-cards" style="background:rgba(28,63,140,.15);border:1px solid rgba(28,63,140,.15)">
+          <div class="m-card" style="background:#fff"><span class="tag" style="color:#ED2224">Astillero</span><h4>Área acuática</h4><p>33 ha autorizadas, CAPEX desde 14M.</p></div>
+          <div class="m-card" style="background:#fff"><span class="tag" style="color:#ED2224">Terminal</span><h4>Calado 20 m</h4><p>Capesize, 300,000 DWT.</p></div>
+          <div class="m-card" style="background:#fff"><span class="tag" style="color:#ED2224">Cruceros</span><h4>Fly-to-cruise</h4><p>Conexión bajo 45 min.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="verdict"><b>Lectura:</b> serio, institucional, "documento técnico". El riesgo es que el navy muy oscuro puede sentirse pesado en secciones largas de texto — por eso hoy alternamos con fondos claros cada 2-3 bloques.</div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- OPCIÓN 2 — ACERO Y COBRE (industrial/minero) -->
+<!-- ============================================ -->
+<section class="opcion" style="border-color:#1B2733">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <div class="num" style="color:#ED2224">OPCIÓN 2</div>
+        <h2>Acero y Cobre <span style="font-weight:400;color:rgba(16,28,46,.5);font-size:16px">— más industria, menos playa</span></h2>
+        <p class="desc">Cambia el navy por un grafito azulado y el arena por cobre/bronce. Se aleja del registro "resort costero" y se acerca al lenguaje visual de minería e infraestructura pesada — coherente con hablarle a Cerro Verde o Las Bambas.</p>
+      </div>
+    </div>
+    <div class="swatches">
+      <div class="sw"><div class="chip" style="background:#1B2733"></div><div class="lab"><b>Grafito</b>#1B2733</div></div>
+      <div class="sw"><div class="chip" style="background:#3D5568"></div><div class="lab"><b>Acero</b>#3D5568</div></div>
+      <div class="sw"><div class="chip" style="background:#ED2224"></div><div class="lab"><b>Rojo</b>#ED2224</div></div>
+      <div class="sw"><div class="chip" style="background:#B5651D"></div><div class="lab"><b>Cobre</b>#B5651D</div></div>
+      <div class="sw"><div class="chip" style="background:#DCD5C9"></div><div class="lab"><b>Piedra</b>#DCD5C9</div></div>
+      <div class="sw"><div class="chip" style="background:#F5F3EE;box-shadow:inset 0 0 0 1px rgba(0,0,0,.1)"></div><div class="lab"><b>Papel</b>#F5F3EE</div></div>
+    </div>
+
+    <div class="mock">
+      <div class="m-nav" style="background:#1B2733">
+        <div class="m-brand"><span class="m-logo"></span><b>Puerto Pacífico Sur</b></div>
+        <div class="m-menu" style="color:rgba(245,243,238,.8)"><span>ASTILLERO</span><span style="color:#ED2224">TERMINAL</span><span>TERRENOS</span></div>
+      </div>
+      <div class="m-hero" style="background:linear-gradient(150deg,#26374A,#1B2733)">
+        <span class="badge" style="color:#D08A4E;border:1px solid rgba(181,101,29,.45);background:rgba(181,101,29,.12)">Oportunidad abierta</span>
+        <h3>El puerto que no<br>necesita dragado</h3>
+        <p>851 hectáreas inscritas, calado natural de hasta 27.7 m.</p>
+        <div class="m-btns">
+          <div class="m-btn" style="background:#ED2224;color:#fff">Solicitar dossier</div>
+          <div class="m-btn" style="border:1px solid rgba(245,243,238,.4);color:#fff">Ver líneas</div>
+        </div>
+      </div>
+      <div class="m-bar" style="background:#1B2733">
+        <div><div class="v">27.7<span style="font-size:11px;color:#D08A4E">m</span></div><div class="k">Sonda máxima</div></div>
+        <div><div class="v">851<span style="font-size:11px;color:#D08A4E">ha</span></div><div class="k">Propiedad inscrita</div></div>
+        <div><div class="v">0</div><div class="k">Gravámenes</div></div>
+        <div><div class="v">18<span style="font-size:11px;color:#D08A4E">%</span></div><div class="k">TIR terminal</div></div>
+      </div>
+      <div class="m-body">
+        <div class="m-eyebrow" style="color:#3D5568"><span>Líneas de desarrollo</span></div>
+        <table class="m-table">
+          <thead style="color:#3D5568"><tr style="border-color:#3D5568"><th>Terminal</th><th>Calado</th><th>Clase</th></tr></thead>
+          <tbody>
+            <tr style="background:rgba(237,34,36,.06)"><td style="color:#ED2224;font-weight:600;box-shadow:inset 3px 0 0 #ED2224">Puerto Pacífico Sur</td><td>20.0 m</td><td>Capesize</td></tr>
+            <tr><td>Mejillones</td><td>18.0 m</td><td>Capesize</td></tr>
+          </tbody>
+        </table>
+        <div class="m-cards" style="background:rgba(61,85,104,.18);border:1px solid rgba(61,85,104,.18)">
+          <div class="m-card" style="background:#fff"><span class="tag" style="color:#B5651D">Astillero</span><h4>Área acuática</h4><p>33 ha autorizadas, CAPEX desde 14M.</p></div>
+          <div class="m-card" style="background:#fff"><span class="tag" style="color:#B5651D">Terminal</span><h4>Calado 20 m</h4><p>Capesize, 300,000 DWT.</p></div>
+          <div class="m-card" style="background:#fff"><span class="tag" style="color:#B5651D">Cruceros</span><h4>Fly-to-cruise</h4><p>Conexión bajo 45 min.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="verdict"><b>Lectura:</b> más "planta industrial / mina / puerto de contenedores" que "costa turística". Funciona muy bien para Astillero y Terminal; puede sentirse frío para las páginas de Terrenos y Club Náutico, que necesitan calidez.</div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- OPCIÓN 3 — PACÍFICO CLARO (más marino, menos negro) -->
+<!-- ============================================ -->
+<section class="opcion" style="border-color:#0D3B44">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <div class="num" style="color:#ED2224">OPCIÓN 3</div>
+        <h2>Pacífico Claro <span style="font-weight:400;color:rgba(16,28,46,.5);font-size:16px">— más océano, menos noche</span></h2>
+        <p class="desc">Reemplaza el navy casi negro por un teal profundo — más cercano al color real del agua en tus fotos — y suma una turquesa como segundo acento junto al rojo. Se siente más "costa del Pacífico" y menos "sala de juntas a medianoche".</p>
+      </div>
+    </div>
+    <div class="swatches">
+      <div class="sw"><div class="chip" style="background:#0D3B44"></div><div class="lab"><b>Teal profundo</b>#0D3B44</div></div>
+      <div class="sw"><div class="chip" style="background:#2FA8A0"></div><div class="lab"><b>Turquesa</b>#2FA8A0</div></div>
+      <div class="sw"><div class="chip" style="background:#ED2224"></div><div class="lab"><b>Rojo</b>#ED2224</div></div>
+      <div class="sw"><div class="chip" style="background:#D8C9A3"></div><div class="lab"><b>Arena clara</b>#D8C9A3</div></div>
+      <div class="sw"><div class="chip" style="background:#E9F1EF"></div><div class="lab"><b>Bruma</b>#E9F1EF</div></div>
+      <div class="sw"><div class="chip" style="background:#FAFAF6;box-shadow:inset 0 0 0 1px rgba(0,0,0,.1)"></div><div class="lab"><b>Papel</b>#FAFAF6</div></div>
+    </div>
+
+    <div class="mock">
+      <div class="m-nav" style="background:#0D3B44">
+        <div class="m-brand"><span class="m-logo"></span><b>Puerto Pacífico Sur</b></div>
+        <div class="m-menu" style="color:rgba(250,250,246,.8)"><span>ASTILLERO</span><span style="color:#ED2224">TERMINAL</span><span>TERRENOS</span></div>
+      </div>
+      <div class="m-hero" style="background:linear-gradient(150deg,#155A66,#0D3B44)">
+        <span class="badge" style="color:#7FD8CF;border:1px solid rgba(47,168,160,.45);background:rgba(47,168,160,.14)">Oportunidad abierta</span>
+        <h3>El puerto que no<br>necesita dragado</h3>
+        <p>851 hectáreas inscritas, calado natural de hasta 27.7 m.</p>
+        <div class="m-btns">
+          <div class="m-btn" style="background:#ED2224;color:#fff">Solicitar dossier</div>
+          <div class="m-btn" style="border:1px solid rgba(250,250,246,.4);color:#fff">Ver líneas</div>
+        </div>
+      </div>
+      <div class="m-bar" style="background:#0D3B44">
+        <div><div class="v">27.7<span style="font-size:11px;color:#7FD8CF">m</span></div><div class="k">Sonda máxima</div></div>
+        <div><div class="v">851<span style="font-size:11px;color:#7FD8CF">ha</span></div><div class="k">Propiedad inscrita</div></div>
+        <div><div class="v">0</div><div class="k">Gravámenes</div></div>
+        <div><div class="v">18<span style="font-size:11px;color:#7FD8CF">%</span></div><div class="k">TIR terminal</div></div>
+      </div>
+      <div class="m-body">
+        <div class="m-eyebrow" style="color:#178A80"><span>Líneas de desarrollo</span></div>
+        <table class="m-table">
+          <thead style="color:#178A80"><tr style="border-color:#178A80"><th>Terminal</th><th>Calado</th><th>Clase</th></tr></thead>
+          <tbody>
+            <tr style="background:rgba(237,34,36,.06)"><td style="color:#ED2224;font-weight:600;box-shadow:inset 3px 0 0 #ED2224">Puerto Pacífico Sur</td><td>20.0 m</td><td>Capesize</td></tr>
+            <tr><td>Mejillones</td><td>18.0 m</td><td>Capesize</td></tr>
+          </tbody>
+        </table>
+        <div class="m-cards" style="background:rgba(47,168,160,.15);border:1px solid rgba(47,168,160,.15)">
+          <div class="m-card" style="background:#fff"><span class="tag" style="color:#ED2224">Astillero</span><h4>Área acuática</h4><p>33 ha autorizadas, CAPEX desde 14M.</p></div>
+          <div class="m-card" style="background:#fff"><span class="tag" style="color:#ED2224">Terminal</span><h4>Calado 20 m</h4><p>Capesize, 300,000 DWT.</p></div>
+          <div class="m-card" style="background:#fff"><span class="tag" style="color:#ED2224">Cruceros</span><h4>Fly-to-cruise</h4><p>Conexión bajo 45 min.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="verdict"><b>Lectura:</b> el más cálido y accesible de los tres sin perder seriedad. Favorece a Terrenos, Club Náutico y Cruceros; para Astillero/Terminal sigue funcionando pero con un poco menos de "peso institucional" que la Opción 1.</div>
+  </div>
+</section>
+
+<div class="wrap" style="padding:10px 0 60px">
+  <div class="verdict" style="background:#101c2e;color:#fff;border:0">
+    <b style="color:#fff">Mi recomendación si tuviera que elegir sin más contexto:</b> Opción 1 para Astillero/Terminal/Legal (donde el peso institucional vende), y valdría la pena evaluar Opción 3 específicamente para Terrenos/Club Náutico/Cruceros — son las páginas donde hoy el navy oscuro compite con el tono cálido y humano que necesitan. Pero dime cuál de las tres te habla más a ti antes de que combine nada.
+  </div>
+</div>
+
+</body>
+</html>
